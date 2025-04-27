@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thank You</title>
+
+  <!-- Reuse your existing styles -->
+  <link rel="stylesheet" href="path/to/your/main.css"> <!-- adjust this path -->
+
+  <style>
+    /* Simple thank you page styling */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #1a1a1a;
+      color: #eeff00;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      text-align: center;
+      position: relative;
+    }
+
+    .thank-you-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #00ff2ae8 0%, transparent 70%);
+      filter: blur(50px);
+      animation: pulse 3s infinite alternate;
+      z-index: 0;
+    }
+
+    .thank-you-message {
+      background-color: #1a1a1ad3;
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.884);
+      animation: fadeIn 1s ease forwards;
+      z-index: 1;
+      position: relative;
+    }
+
+    .thank-you-message h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .thank-you-message p {
+      font-size: 1.2rem;
+      color: var(--header-color, #fff);
+    }
+
+    .countdown {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      color: #eeff00;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+      to {
+        transform: scale(1.2);
+        opacity: 0.8;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="thank-you-wrapper">
+    <div class="glow"></div>
+
+    <div class="thank-you-message">
+      <h1>Thank You!</h1>
+      <p>Your message has been received.</p>
+      <div class="countdown">Redirecting in <span id="count">5</span> seconds...</div>
+    </div>
+  </div>
+
+  <script>
+    let seconds = 5;
+    const countSpan = document.getElementById('count');
+
+    const countdown = setInterval(() => {
+      seconds--;
+      countSpan.textContent = seconds;
+
+      if (seconds <= 0) {
+        clearInterval(countdown);
+        window.location.href = "https://john-waweru.github.io/";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
