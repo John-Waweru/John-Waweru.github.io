@@ -50,7 +50,7 @@ window.addEventListener('scroll', () => {
 
 
 
-  const words = ["Telecomm Engineer", "IT Support Specialist", "Security System Engineer","Python Programmer","Cybersecurity Enthusiast", "Network Technician", "Web Developer"];
+  const words = ["Telecomm Engineer", "IT Support", "Security System Technician","Python Programmer","Cybersecurity Enthusiast", "Network Technician", "Web Developer"];
   const textElement = document.querySelector(".typewrite-text");
 
   let wordIndex = 0;
